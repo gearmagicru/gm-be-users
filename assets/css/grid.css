@@ -1,0 +1,110 @@
+/*!
+ * Сетка (Grid).
+ * 
+ * Модуль "Пользователи".
+ *
+ * Copyright 2015 Вeб-студия GearMagic
+ * Copyright Anton Tivonenko <anton.tivonenko@gmail.com>
+ * https://gearmagic.ru/license/
+ */
+
+/* Заливка заднего фона сетки (см. идент. viewManager) */
+#g-users-grid .x-grid-view {
+    background: url("../images/watermark.svg") no-repeat calc(100% - 25px) calc(100% - 10px);
+    background-size: 100px;
+}
+
+
+/**
+ * Панель навигации сетки.
+ */
+/* Значки социальных сетей */
+.g-navigator__msn {
+    display: inline-block;
+    margin: 3px;
+    background-color: #efefef;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    text-align: center;
+}
+.g-navigator__msn i {
+    font-size: 23px;
+    line-height: 36px;
+    color: #838383;
+    transition: color 0.2s linear;
+}
+.g-cell__msn { margin: 3px; }
+.g-cell__msn i {
+    font-size: 21px;
+    color: #afafaf;
+    transition: color 0.2s linear;
+}
+
+
+/**
+ * Ячейки сетки.
+ */
+/* Значки социальных сетей */
+.g-navigator__msn:hover {
+    background-color: #e9e9eb;
+}
+.g-cell__msn:hover i,
+.g-navigator__msn:hover i {
+    color: #217346;
+}
+.g-cell__msn_facebook:hover i,
+.g-navigator__msn_facebook:hover i {
+    color: #3C599B;
+}
+.g-cell__msn_vk:hover i,
+.g-navigator__msn_vk:hover i {
+    color: #4C75A3;
+}
+.g-cell__msn_ok:hover i,
+.g-navigator__msn_ok:hover i {
+    color: #F68634;
+}
+.g-cell__msn_twitter:hover i,
+.g-navigator__msn_twitter:hover i {
+    color: #20AAE9;
+}
+.g-cell__msn_linkedin:hover i,
+.g-navigator__msn_linkedin:hover i {
+    color: #0972C3;
+}
+.g-cell__msn_skype:hover i,
+.g-navigator__msn_skype:hover i {
+    color: #01A8E6;
+}
+.g-cell__msn_viber:hover i,
+.g-navigator__msn_viber:hover i {
+    color: #774E98;
+}
+.g-cell__msn_watssapp:hover i,
+.g-navigator__msn_watssapp:hover i {
+    color: #13940A;
+}
+.g-cell__msn_telegram:hover i,
+.g-navigator__msn_telegram:hover i {
+    color: #33A3D7;
+}
+.g-cell__msn_icq:hover i,
+.g-navigator__msn_icq:hover i {
+    color: #13940A;
+}
+
+
+/**
+ * Панель инструментов сетки.
+ */
+/* Значок "Добавить" */
+.g-icon_user-add_large,
+.g-icon_user-add_medium,
+.g-icon_user-add { background-image: url("../images/icon-add.svg"); }
+.g-icon_user-add_small { background-image: url("../images/icon-add_small.svg"); }
+/* Значок "Удалить" */
+.g-icon_user-delete_large,
+.g-icon_user-delete_medium,
+.g-icon_user-delete { background-image: url("../images/icon-delete.svg"); }
+.g-icon_user-delete_small { background-image: url("../images/icon-delete_small.svg"); }

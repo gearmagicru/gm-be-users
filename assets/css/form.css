@@ -1,0 +1,42 @@
+/*!
+ * Форма (Form).
+ *
+ * Модуль "Профили пользователей".
+ *
+ * Copyright 2015 Вeб-студия GearMagic
+ * Copyright Anton Tivonenko <anton.tivonenko@gmail.com>
+ * https://gearmagic.ru/license/
+ */
+
+/**
+ * фото профиля пользователя.
+ * <div class="g-profile__photo">...
+ */
+.g-users__photo {
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+}
+.g-users__photo img {
+    height: 100%;
+}
+.g-users__photo img.g-icon-svg {
+    background-size: 66%;
+    background-color: #efefef;
+}
+
+
+/**
+ * Панель вкладок формы.
+ * Ext.tab.Panel (tabpanel)
+ */
+/* Значок "Учетная запись" */
+.g-users_icon-tab-account {
+    background-image: url("../images/icon-tab-account.svg");
+}
+/* Значок "Личные данные" */
+.g-users_icon-tab-profile {
+    background-image: url("../images/icon-tab-profile.svg");
+}
