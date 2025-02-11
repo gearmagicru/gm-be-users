@@ -1,0 +1,56 @@
+[
+    {
+        "xtype": "textfield",
+        "fieldLabel": "#Username",
+        "name": "username",
+        "minLength": 3,
+        "maxLength": 50,
+        "allowBlank": false
+    }, {
+        "xtype": "textfield",
+        "inputType": "password",
+        "fieldLabel": "#Password",
+        "name": "password",
+        "itemId": "password",
+        "minLength": 8,
+        "maxLength": 40,
+        "allowBlank": false
+    }, {
+        "xtype": "textfield",
+        "inputType": "password",
+        "fieldLabel": "#Confirm",
+        "name": "passwordConfirm",
+        "initialPassField": "password",
+        "allowBlank": false
+    }, {
+        "xtype": "combobox",
+        "fieldLabel": "#Status",
+        "name": "status",
+        "store": {
+            "fields": ["code", "name"],
+            "data": "@userStatuses"
+        },
+        "displayField": "name",
+        "valueField": "code",
+        "queryMode": "local",
+        "editable": false,
+        "allowBlank": false
+    }, {
+        "xtype": "tagfield",
+        "fieldLabel": "#Role",
+        "name": "roles",
+        "store": {
+            "fields": ["id", "group"],
+            "data": "@roleTags"
+        },
+        "encodeSubmitValue": true,
+        "displayField": "group",
+        "valueField": "id",
+        "createNewOnEnter": false,
+        "createNewOnBlur": false,
+        "filterPickList": true,
+        "queryMode": "local",
+        "publishes": "value",
+        "allowBlank": false
+    }
+]

@@ -1,0 +1,51 @@
+[{
+    "xtype": "fieldset",
+    "title": "#Old account",
+    "defaults": {
+        "labelWidth": 150,
+        "labelAlign": "right",
+        "anchor": "100%"
+    },
+    "items": [{
+        "xtype": "textfield",
+        "inputType": "password",
+        "fieldLabel":"#Password",
+        "name": "passwordReset",
+        "id": "passwordReset",
+        "maxLength": 32,
+        "allowBlank": false
+    }]
+}, {
+    "xtype": "fieldset",
+    "title": "#New account",
+    "defaults": {
+        "labelWidth": 150,
+        "labelAlign": "right",
+        "anchor": "100%"
+    },
+    "items": [{
+        "xtype": "textfield",
+        "fieldLabel": "#Username",
+        "name": "username",
+        "minLength": 3,
+        "maxLength": 50,
+        "allowBlank": false
+    }, {
+        "xtype": "textfield",
+        "inputType": "password",
+        "fieldLabel": "#Password",
+        "name": "password",
+        "itemId": "password",
+        "minLength": 8,
+        "maxLength": 40,
+        "allowBlank": false
+    }, {
+        "xtype": "textfield",
+        "inputType": "password",
+
+        "fieldLabel": "#Confirm",
+        "name": "passwordConfirm",
+        "initialPassField": "password",
+        "allowBlank": false
+    }]
+}]

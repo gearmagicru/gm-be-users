@@ -1,0 +1,139 @@
+[
+    {
+        "xtype": "container",
+        "anchor": "0 35%",
+        "layout": "column",
+        "defaults": {
+            "layout": "anchor",
+            "xtype": "container",
+            "defaultType": "textfield"
+        },
+        "items": [
+            {
+                "columnWidth": "0.22",
+                "items": [
+                    {
+                        "xtype": "panel",
+                        "width": 110,
+                        "height": 110,
+                        "html": "@photo"
+                    }
+                ]
+            },
+            {
+                "columnWidth": "0.78",
+                "defaults": {
+                    "labelAlign": "right"
+                },
+                "items": [
+                    {
+                        "fieldLabel": "#Call name",
+                        "name": "callName",
+                        "tooltip": "#Call name - this is name indicated in messages and letters",
+                        "anchor": "100%",
+                        "maxLength": 100,
+                        "allowBlank": false
+                    },
+                    {
+                        "fieldLabel": "#First name",
+                        "name": "firstName",
+                        "anchor": "100%",
+                        "maxLength": 100,
+                        "allowBlank": false
+                    },
+                    {
+                        "fieldLabel": "#Second name",
+                        "name": "secondName",
+                        "anchor": "100%",
+                        "maxLength": 100
+                    },
+                    {
+                        "fieldLabel": "#Patronymic name",
+                        "name": "patronymicName",
+                        "anchor": "100%",
+                        "maxLength": 100
+                    }, {
+                        "xtype": "datefield",
+                        "fieldLabel": "#Date of birth",
+                        "name": "dateOfBirth",
+                        "width": 210,
+                        "format": "d-m-Y"
+                    }, {
+                        "xtype": "radio",
+                        "id": "g-users__gender-male",
+                        "fieldLabel": "#Gender",
+                        "boxLabel": "#Man",
+                        "name": "gender",
+                        "checked": true,
+                        "inputValue": 1,
+                        "listeners": {
+                            "change": "changeGender"
+                        }
+                    }, {
+                        "xtype": "radio",
+                        "fieldLabel": "&nbsp;",
+                        "labelSeparator": "",
+                        "id": "g-users__gender-female",
+                        "boxLabel": "#Woman",
+                        "name": "gender",
+                        "inputValue": 0,
+                        "listeners": {
+                            "change": "changeGender"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "xtype": "container",
+        "anchor": "0 65%",
+        "autoScroll": true,
+        "padding": "3 3 3 3",
+        "items": [
+            {
+                "xtype": "fieldset",
+                "title": "#Contact information",
+                "defaults": {
+                    "labelWidth": 180,
+                    "labelAlign": "right"
+                },
+                "items": [
+                    {
+                        "xtype": "textfield",
+                        "fieldLabel": "#Phone",
+                        "tooltip": "#The phone number can be used to recover or verify account",
+                        "name": "phone",
+                        "maxLength" : 20,
+                        "anchor": "100%"
+                    }, {
+                        "xtype": "textfield",
+                        "fieldLabel": "#E-mail",
+                        "tooltip": "#E-mail can be used to recover account",
+                        "name": "email",
+                        "maxLength": 100,
+                        "anchor": "100%",
+                        "allowBlank": false
+                    }
+                ]
+            },
+            {
+                "xtype": "label",
+                "ui": "fieldset-comment",
+                "html": "#information is used to protect the account"
+            },
+            {
+                "xtype": "fieldset",
+                "title": "#Regional settings",
+                "defaults": {
+                    "labelWidth": 180,
+                    "labelAlign": "right",
+                    "width": "100%"
+                },
+                "items": [
+                    "@comboTimeZones"
+                ]
+            }
+        ]
+    }
+]

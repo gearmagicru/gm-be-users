@@ -1,0 +1,230 @@
+[
+    {
+        "xtype": "tabpanel",
+        "activeTab": 0,
+        "ui": "flat-light",
+        "enableTabScroll": true,
+        "anchor": "100% 100%",
+        "autoRender": true,
+        "items": [
+            {
+                "title": "#User account",
+                "iconCls": "g-icon-svg g-icon-m_color_tab g-users_icon-tab-account",
+                "bodyPadding": "10",
+                "autoScroll": true,
+                "layout": "anchor",
+                "defaults": {
+                    "labelWidth": 150,
+                    "labelAlign": "right",
+                    "anchor": "100%"
+                },
+                "items": [
+                    {
+                        "xtype": "textfield",
+                        "fieldLabel": "#Username",
+                        "name": "username",
+                        "minLength": 3,
+                        "maxLength": 50,
+                        "allowBlank": false
+                    }, {
+                        "xtype": "textfield",
+                        "inputType": "password",
+                        "fieldLabel": "#Password",
+                        "name": "password",
+                        "itemId": "password",
+                        "minLength": 8,
+                        "maxLength": 40,
+                        "allowBlank": false
+                    }, {
+                        "xtype": "textfield",
+                        "inputType": "password",
+                        "fieldLabel": "#Confirm",
+                        "name": "passwordConfirm",
+                        "initialPassField": "password",
+                        "allowBlank": false
+                    }, {
+                        "xtype": "combobox",
+                        "fieldLabel": "#Status",
+                        "name": "status",
+                        "store": {
+                            "fields": ["code", "name"],
+                            "data": "@userStatuses"
+                        },
+                        "displayField": "name",
+                        "valueField": "code",
+                        "queryMode": "local",
+                        "editable": false,
+                        "allowBlank": false
+                    }, {
+                        "xtype": "tagfield",
+                        "fieldLabel": "#Role",
+                        "name": "roles",
+                        "store": {
+                            "fields": ["id", "group"],
+                            "data": "@roleTags"
+                        },
+                        "encodeSubmitValue": true,
+                        "displayField": "group",
+                        "valueField": "id",
+                        "createNewOnEnter": false,
+                        "createNewOnBlur": false,
+                        "filterPickList": true,
+                        "queryMode": "local",
+                        "publishes": "value",
+                        "allowBlank": false
+                    },
+                    {
+                        "xtype": "label",
+                        "ui": "note",
+                        "html": "#The user account is created only for the Control Panel, and for the website on the side of the site"
+                    }
+                ]
+            },
+            {
+                "title": "#Personal data",
+                "iconCls": "g-icon-svg g-icon-m_color_tab g-users_icon-tab-profile",
+                "bodyPadding": "5",
+                "autoScroll": true,
+                "items": [
+                    {
+                        "xtype": "container",
+                        "anchor": "0 35%",
+                        "layout": "column",
+                        "defaults": {
+                            "layout": "anchor",
+                            "xtype": "container",
+                            "defaultType": "textfield"
+                        },
+                        "items": [
+                            {
+                                "columnWidth": "0.22",
+                                "items": [
+                                    {
+                                        "xtype": "panel",
+                                        "width": 110,
+                                        "height": 110,
+                                        "html": "@photo"
+                                    }
+                                ]
+                            },
+                            {
+                                "columnWidth": "0.78",
+                                "defaults": {
+                                    "labelAlign": "right"
+                                },
+                                "items": [
+                                    {
+                                        "fieldLabel": "#Call name",
+                                        "name": "callName",
+                                        "tooltip": "#Call name - this is name indicated in messages and letters",
+                                        "anchor": "100%",
+                                        "maxLength": 100,
+                                        "allowBlank": false
+                                    },
+                                    {
+                                        "fieldLabel": "#First name",
+                                        "name": "firstName",
+                                        "anchor": "100%",
+                                        "maxLength": 100,
+                                        "allowBlank": false
+                                    },
+                                    {
+                                        "fieldLabel": "#Second name",
+                                        "name": "secondName",
+                                        "anchor": "100%",
+                                        "maxLength": 100
+                                    },
+                                    {
+                                        "fieldLabel": "#Patronymic name",
+                                        "name": "patronymicName",
+                                        "anchor": "100%",
+                                        "maxLength": 100
+                                    }, {
+                                        "xtype": "datefield",
+                                        "fieldLabel": "#Date of birth",
+                                        "name": "dateOfBirth",
+                                        "width": 210,
+                                        "format": "d-m-Y"
+                                    }, {
+                                        "xtype": "radio",
+                                        "id": "g-users__gender-male",
+                                        "fieldLabel": "#Gender",
+                                        "boxLabel": "#Man",
+                                        "name": "gender",
+                                        "checked": true,
+                                        "inputValue": 1,
+                                        "listeners": {
+                                            "change": "changeGender"
+                                        }
+                                    }, {
+                                        "xtype": "radio",
+                                        "fieldLabel": "&nbsp;",
+                                        "labelSeparator": "",
+                                        "id": "g-users__gender-female",
+                                        "boxLabel": "#Woman",
+                                        "name": "gender",
+                                        "inputValue": 0,
+                                        "listeners": {
+                                            "change": "changeGender"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "xtype": "container",
+                        "anchor": "0 65%",
+                        "autoScroll": true,
+                        "padding": "3 3 3 3",
+                        "items": [
+                            {
+                                "xtype": "fieldset",
+                                "title": "#Contact information",
+                                "defaults": {
+                                    "labelWidth": 180,
+                                    "labelAlign": "right"
+                                },
+                                "items": [
+                                    {
+                                        "xtype": "textfield",
+                                        "fieldLabel": "#Phone",
+                                        "tooltip": "#The phone number can be used to recover or verify account",
+                                        "name": "phone",
+                                        "maxLength" : 20,
+                                        "anchor": "100%"
+                                    }, {
+                                        "xtype": "textfield",
+                                        "fieldLabel": "#E-mail",
+                                        "tooltip": "#E-mail can be used to recover account",
+                                        "name": "email",
+                                        "maxLength": 100,
+                                        "anchor": "100%",
+                                        "allowBlank": false
+                                    }
+                                ]
+                            },
+                            {
+                                "xtype": "label",
+                                "ui": "fieldset-comment",
+                                "html": "#information is used to protect the account"
+                            },
+                            {
+                                "xtype": "fieldset",
+                                "title": "#Regional settings",
+                                "defaults": {
+                                    "labelWidth": 180,
+                                    "labelAlign": "right",
+                                    "width": "100%"
+                                },
+                                "items": [
+                                    "@comboTimeZones"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
