@@ -1,0 +1,27 @@
+<?php
+/**
+ * Страница "Содержание".
+ * 
+ * Локализации по умолчанию.
+ * 
+ * Этот файл является частью модуля веб-приложения GearMagic.
+ * 
+ * @copyright Copyright (c) 2015 Веб-студия GearMagic
+ * @license https://gearmagic.ru/license/
+ */
+?>
+<article>
+    <h1>Users</h1>
+    <div class="g-help-icon">
+        <img src="<?= $assetsUrl, '/images/icon.svg' ?>" />
+    </div>
+    <p>Control panel and website user accounts.</p>
+
+    <h2>Contents:</h2>
+    <ul class="g-help-list">
+        <li><a href="<?= $url('grid') ?>">List of users</a></li>
+        <li><a href="<?= $url('form') ?>">Adding a user</a></li>
+        <li><a href="<?= $url('account') ?>">Editing a user account</a></li>
+        <li><a href="<?= $url('profile') ?>">Editing a user's personal information</a></li>
+    </ul>
+</article>
