@@ -1,13 +1,7 @@
 {
     "name": "gearmagicru/gm-be-users",
-    "description": "Control panel module \"Users\"",
-    "keywords": [
-        "gm",
-        "gearmagic",
-        "GM Panel",
-        "module",
-        "users"
-    ],
+    "description": "Control Panel module \"Users\"",
+    "keywords": ["gearmagic", "gm-panel", "gm-component", "gm-module", "module", "users"],
     "homepage": "https://apps.gearmagic.ru/component/gm-be-users",
     "type": "component",
     "license": "MIT",
